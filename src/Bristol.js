@@ -248,14 +248,24 @@ class Bristol extends events.EventEmitter {
    *   cannot be found.
    * @private
    */
-  _processStack (stack, bristolFileName) {
-    let lastIndex = stack.length - 1
-    for (; lastIndex >= 0; lastIndex--) {
-      if (stack[lastIndex].getFileName() === bristolFileName) {
-        break
+  _processStack(stack, bristolFilename) {
+    const line = stack.find(line => {
+      const fileName = line.getFileName()
+      // skip the Bristol library itself
+      if (fileName.includes('Bristol.js')) {
+        return false
       }
-    }
-    const line = stack[lastIndex + 1]
+      // skip node-logger/logger
+      if (fileName.includes('node-logger/dist/lib/logger.js')) {
+        return false
+      }
+      // skip node-logger/log
+      if (fileName.includes('node-logger/dist/lib/log.js')) {
+        return false
+      }
+      // return first non-Bristol / non node-logger match, it'll be the calling library
+      return true
+    })
     if (line) {
       return {
         file: line.getFileName(),
