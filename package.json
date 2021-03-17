@@ -1,5 +1,5 @@
 {
-  "name": "bristol",
+  "name": "@banno/bristol",
   "version": "0.4.0",
   "description": "Insanely configurable logging for Node.js",
   "main": "src/Bristol.js",
@@ -10,10 +10,10 @@
     "test-cov": "istanbul cover _mocha",
     "check-cov": "istanbul check-coverage --statements 90 --functions 90 --branches 70 --lines 90"
   },
-  "homepage": "https://github.com/TomFrost/Bristol",
+  "homepage": "https://github.com/banno/bristol",
   "repository": {
     "type": "git",
-    "url": "git://github.com/TomFrost/Bristol.git"
+    "url": "git://github.com/banno/bristol.git"
   },
   "keywords": [
     "log",
