@@ -1,6 +1,6 @@
 {
   "name": "@banno/bristol",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Insanely configurable logging for Node.js",
   "main": "src/Bristol.js",
   "scripts": {
