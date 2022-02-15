@@ -248,7 +248,7 @@ class Bristol extends events.EventEmitter {
    *   cannot be found.
    * @private
    */
-  _processStack(stack, bristolFilename) {
+  _processStack (stack, bristolFilename) {
     const line = stack.find(line => {
       const fileName = line.getFileName()
       // skip the Bristol library itself
