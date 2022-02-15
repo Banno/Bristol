@@ -248,11 +248,13 @@ class Bristol extends events.EventEmitter {
    *   cannot be found.
    * @private
    */
-  _processStack(stack, bristolFilename) {
+  _processStack (stack, bristolFilename) {
+    let seenBristol = false
     const line = stack.find(line => {
       const fileName = line.getFileName()
       // skip the Bristol library itself
-      if (fileName.includes('Bristol.js')) {
+      if (fileName.includes('Bristol.js') && !fileName.includes('test/src/Bristol.js')) {
+        seenBristol = true
         return false
       }
       // skip node-logger/logger
@@ -264,7 +266,7 @@ class Bristol extends events.EventEmitter {
         return false
       }
       // return first non-Bristol / non node-logger match, it'll be the calling library
-      return true
+      return seenBristol
     })
     if (line) {
       return {
