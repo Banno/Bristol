@@ -14,7 +14,7 @@ describe('CommonInfoModel Formatter', () => {
   before(() => {
     msg = syslog({}, 'debug', new Date(), [
       'hello',
-      {foo: 'bar', hello: 'world'},
+      { foo: 'bar', hello: 'world' },
       new Error('Test error')
     ])
     should.exist(msg)

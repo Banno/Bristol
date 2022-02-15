@@ -22,9 +22,9 @@ describe('File Target', () => {
     })
   })
   it('writes the supplied message to a file', (done) => {
-    file({file: tmpFile}, 'debug', new Date(), 'foo')
+    file({ file: tmpFile }, 'debug', new Date(), 'foo')
     setTimeout(() => {
-      fs.readFile(tmpFile, {encoding: 'utf8'}, (err, data) => {
+      fs.readFile(tmpFile, { encoding: 'utf8' }, (err, data) => {
         should.not.exist(err)
         should.exist(data)
         data.should.eql('foo\n')

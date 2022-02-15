@@ -24,8 +24,8 @@ describe('JSON Formatter', () => {
   it('does not overwrite duplicate keys', () => {
     let res = json({}, 'debug', new Date(), [
       'hello',
-      {foo: 'bar'},
-      {foo: 'car'}
+      { foo: 'bar' },
+      { foo: 'car' }
     ])
     res = JSON.parse(res)
     should.exist(res)
@@ -42,7 +42,7 @@ describe('JSON Formatter', () => {
     res.should.have.property('stackTrace')
   })
   it('omits the messages object when there aren\'t any', () => {
-    let res = json({}, 'debug', new Date(), [{foo: 'bar'}])
+    let res = json({}, 'debug', new Date(), [{ foo: 'bar' }])
     res = JSON.parse(res)
     should.exist(res)
     res.should.not.have.property('messages')
