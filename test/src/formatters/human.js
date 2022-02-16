@@ -14,9 +14,9 @@ describe('Human Formatter', () => {
   before(() => {
     msg = human({}, 'debug', new Date(), [
       'Hello!',
-      {is_it: 'me', 'you\'re': 'looking for'},
-      {file: __filename, line: 82},
-      {obj: { str: 'hello' }}
+      { is_it: 'me', 'you\'re': 'looking for' },
+      { file: __filename, line: 82 },
+      { obj: { str: 'hello' } }
     ])
   })
   it('outputs multiple lines', () => {

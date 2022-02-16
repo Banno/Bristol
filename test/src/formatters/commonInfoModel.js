@@ -14,9 +14,9 @@ describe('CommonInfoModel Formatter', () => {
   before(() => {
     msg = commonInfoModel({}, 'debug', new Date(), [
       'hello',
-      {foo: 'bar', hello: 'world'},
+      { foo: 'bar', hello: 'world' },
       new Error('Test error'),
-      {obj: { str: 'hello' }}
+      { obj: { str: 'hello' } }
     ])
     should.exist(msg)
   })
