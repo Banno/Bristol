@@ -3,6 +3,12 @@
   "version": "1.0.1",
   "description": "Insanely configurable logging for Node.js",
   "main": "src/Bristol.js",
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE.txt",
+    "README.md",
+    "src"
+  ],
   "scripts": {
     "lint": "standard",
     "test": "npm run lint && npm run test-cov && npm run check-cov",
