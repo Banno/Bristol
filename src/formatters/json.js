@@ -48,7 +48,7 @@ module.exports = (options, severity, date, elems) => {
   obj[dateKey] = moment(date).format(dateFormat)
   obj[sevKey] = severity
   elems.forEach((elem) => {
-    let str = logUtil.nonObjToString(elem)
+    const str = logUtil.nonObjToString(elem)
     if (str !== null) {
       obj[msgKey] += ' ' + str
     } else if (elem instanceof Error) {

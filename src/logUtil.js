@@ -24,7 +24,7 @@ const hasOwnProp = Object.prototype.hasOwnProperty
 exports.forEachObj = (obj, cb) => {
   let brakesOn = false
   const brake = () => { brakesOn = true }
-  for (let key in obj) {
+  for (const key in obj) {
     if (hasOwnProp.call(obj, key)) cb(key, obj[key], brake)
     if (brakesOn) break
   }
