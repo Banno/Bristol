@@ -131,7 +131,7 @@ class Bristol extends events.EventEmitter {
    * @param {...*} elements One or more elements of any type to be logged
    */
   log (severity, elements) { // eslint-disable-line no-unused-vars
-    if (!this._severities.hasOwnProperty(severity)) {
+    if (!Object.prototype.hasOwnProperty.call(this._severities, severity)) {
       throw new Error(`Severity ${severity} does not exist.`)
     }
     const args = Array.prototype.slice.call(arguments)
@@ -312,14 +312,14 @@ class Bristol extends events.EventEmitter {
       return chain
     }
     chain.withLowestSeverity = (severity) => {
-      if (!this._severities.hasOwnProperty(severity)) {
+      if (!Object.prototype.hasOwnProperty.call(this._severities, severity)) {
         throw new Error(`Severity ${severity} does not exist.`)
       }
       target.mostVerbose = this._severities[severity]
       return chain
     }
     chain.withHighestSeverity = (severity) => {
-      if (!this._severities.hasOwnProperty(severity)) {
+      if (!Object.prototype.hasOwnProperty.call(this._severities, severity)) {
         throw new Error(`Severity ${severity} does not exist.`)
       }
       target.leastVerbose = this._severities[severity]

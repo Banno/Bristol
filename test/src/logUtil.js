@@ -300,7 +300,7 @@ describe('Util', () => {
       result.should.eql('hello0')
     })
     it('increments until a free key is found', () => {
-      const obj = { foo: 'bar', 'foo0': 'car', 'foo1': 'star' }
+      const obj = { foo: 'bar', foo0: 'car', foo1: 'star' }
       const result = logUtil.freeKey(obj, 'foo')
       result.should.eql('foo2')
     })

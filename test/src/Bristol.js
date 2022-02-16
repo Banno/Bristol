@@ -47,9 +47,11 @@ describe('Bristol', () => {
         this.file = file
         this.line = line
       }
+
       getFileName () {
         return this.file
       }
+
       getLineNumber () {
         return this.line
       }

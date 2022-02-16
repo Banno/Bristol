@@ -47,7 +47,7 @@ module.exports = (options, severity, date, elems) => {
 
   date = moment(date).format(dateFormat)
   elems.forEach((elem) => {
-    let str = logUtil.nonObjToString(elem)
+    const str = logUtil.nonObjToString(elem)
     if (str !== null) {
       title += ' ' + str
     } else if (elem instanceof Error) {
